@@ -74,15 +74,15 @@ class Settings(collections.MutableMapping):
         #    return
         setting_type = self.get_setting(key)._type
         try:
-            if setting_type == bool:
+            if setting_type == types.BooleanType:
                 value = bool(value)
-            elif setting_type == int:
+            elif setting_type == types.IntType:
                 value = int(value)
-            elif setting_type == float:
+            elif setting_type == types.FloatType:
                 value = float(value)
-            elif setting_type == str:
+            elif setting_type == types.UnicodeType:
                 value = unicode(value)
-            elif setting_type == list:
+            elif setting_type == types.ListType:
                 value = value
             elif setting_type == np.ndarray:
                 value = np.asarray(value)

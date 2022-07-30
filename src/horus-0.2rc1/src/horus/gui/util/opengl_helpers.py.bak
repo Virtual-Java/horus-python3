@@ -73,7 +73,7 @@ class GLShader(GLReferenceCounter):
                 raise RuntimeError("Link failure: %s" % (glGetProgramInfoLog(self._program)))
             glDeleteShader(vertex_shader)
             glDeleteShader(fragment_shader)
-        except RuntimeError as e:
+        except RuntimeError, e:
             logger.error(str(e))
             self._program = None
 
